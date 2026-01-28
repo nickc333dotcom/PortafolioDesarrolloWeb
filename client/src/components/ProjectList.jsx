@@ -6,8 +6,8 @@ const ProjectList = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Conexión a tu backend en el puerto 5000
-    axios.get('http://localhost:5000/api/projects')
+    // Conexión al backend en el puerto 5000
+    axios.get('https://portafoliopersonalfinal.onrender.com')
       .then(res => setProjects(res.data))
       .catch(err => console.error("Error al cargar proyectos:", err));
   }, []);
