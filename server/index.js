@@ -2,19 +2,19 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import helmet from 'helmet'; // Seguridad de cabeceras
-import rateLimit from 'express-rate-limit'; // Protección contra spam
+import helmet from 'helmet'; 
+import rateLimit from 'express-rate-limit'; 
 
-// 1. IMPORTAR EL MODELO
+// IMPORTAR EL MODELO
 import Project from './models/Project.js';
 
 dotenv.config();
 
 const app = express();
 
-// 2MIDDLEWARES DE SEGURIDAD
+// MIDDLEWARES DE SEGURIDAD
 app.use(helmet()); 
-app.use(cors()); // Permite peticiones externas (Frontend)
+app.use(cors()); 
 app.use(express.json({ limit: '10kb' })); 
 
 
